@@ -29,7 +29,27 @@ void* heap_top(Heap* pq){
 
 
 void heap_push(Heap* pq, void* data, int priority){
+  //si el arreglo esta lleno lo aumento de tamaño
+  if(pq->size==pq->capac){
+    pq->heapArray = realloc(pq->heapArray, pq->capac*=2+1);
+  }
+  else{
+    //inserte el dato al ultimo espacio disponible
+    pq->heapArray[pq->size].data=data;
+    pq->heapArray[pq->size].priority=priority;
+  }
+  heapElem aux;
+  int s=pq->size;
+  int padre=(s-1)/2;
+  while((pq->heapArray[s].priority)>(pq->heapArray[padre].priority)){
+    aux=pq->heapArray[s];
+    pq->heapArray[s]=pq->heapArray[padre];
+    pq->heapArray[padre]=aux;
 
+    s=padre;
+    padre=(s-1)/2;
+  }
+pq->size++;
 }
 
 
