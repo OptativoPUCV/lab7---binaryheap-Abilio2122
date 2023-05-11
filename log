@@ -13,3 +13,14 @@ heap.c:22:43: error: ‘capac’ undeclared (first use in this function)
 heap.c:22:43: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 972b21a
+Thu 11 May 2023 04:36:52 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+test.c: In function ‘heap_top’:
+heap.c:22:47: error: ‘*dato.capac’ is used uninitialized [-Werror=uninitialized]
+   22 |   dato->heapArray=malloc(sizeof(heapElem)*dato->capac);
+      |                                           ~~~~^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+1484129
