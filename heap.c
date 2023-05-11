@@ -63,10 +63,9 @@ pq->size++;
 
 
 void heap_pop(Heap* pq){
-  heapElem raiz = pq->heapArray[0];
 
   //intercambio valores de la raiz y de el ultimo dato
-  raiz=pq->heapArray[pq->size];
+  pq->heapArray[0]=pq->heapArray[pq->size];
   pq->size--;
   //a continuacion reordenare los datos para mantener el monticulo
   //definiendo valores para la funcion siguiente
