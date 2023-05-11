@@ -34,13 +34,19 @@ void heap_push(Heap* pq, void* data, int priority){
     pq->capac=(pq->capac*2)+1;
     pq->heapArray = realloc(pq->heapArray, sizeof(heapElem)*(pq->capac));
   }
-    //inserte el dato al ultimo espacio disponible
+    //inserté el dato al ultimo espacio disponible
     pq->heapArray[pq->size].data=data;
     pq->heapArray[pq->size].priority=priority;
-  
+
+  //definiendo valores para la funcion siguiente
   heapElem aux;
+  //representa al hijo
   int s=pq->size;
+  //representa al padre
   int padre=(s-1)/2;
+  
+  //funcion recursiva que asegurara que reordenara todos los datos para que se cumpla el orden requerido del monticulo
+  
   while((pq->heapArray[s].priority)>(pq->heapArray[padre].priority)){
     if((pq->heapArray[s].priority)>(pq->heapArray[padre].priority)){ 
       aux=pq->heapArray[s];
@@ -50,8 +56,8 @@ void heap_push(Heap* pq, void* data, int priority){
       padre=(s-1)/2;
     }
     else break;
-    
   }
+//actualizo el size
 pq->size++;
 }
 
