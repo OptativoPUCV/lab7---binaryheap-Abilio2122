@@ -194,3 +194,20 @@ heap.c:74:52: error: ‘padre’ undeclared (first use in this function)
 cc1: all warnings being treated as errors
 Compilation failed
 a0f7c49
+Thu 11 May 2023 05:43:21 PM UTC: 
+ heap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:70:17: error: ‘size’ undeclared (first use in this function)
+   70 |   pq->heapArray[size]=raiz;
+      |                 ^~~~
+heap.c:70:17: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:74:24: error: ‘s’ undeclared (first use in this function)
+   74 |   while((pq->heapArray[s].priority)>(pq->heapArray[padre].priority)){
+      |                        ^
+heap.c:74:52: error: ‘padre’ undeclared (first use in this function)
+   74 |   while((pq->heapArray[s].priority)>(pq->heapArray[padre].priority)){
+      |                                                    ^~~~~
+Compilation failed
+72f7028
