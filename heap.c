@@ -31,7 +31,7 @@ void* heap_top(Heap* pq){
 void heap_push(Heap* pq, void* data, int priority){
   //si el arreglo esta lleno lo aumento de tamaño
   if(pq->size==pq->capac){
-    pq->capac*=2+1;
+    pq->capac=(pq->capac*2)+1;
     pq->heapArray = realloc(pq->heapArray, sizeof(heapElem)*(pq->capac));
   }
   else{
