@@ -32,7 +32,7 @@ void heap_push(Heap* pq, void* data, int priority){
   //si el arreglo esta lleno lo aumento de tamaño
   pq->capac*=2+1;
   if(pq->size==pq->capac){
-    pq->heapArray = realloc(pq->heapArray, sizeof(heapElem)*pq->capac);
+    pq->heapArray = realloc(pq->heapArray, sizeof(heapElem)*(pq->capac));
   }
   else{
     //inserte el dato al ultimo espacio disponible
