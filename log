@@ -2,3 +2,14 @@ Thu 11 May 2023 04:16:09 PM UTC:
  tests:  0|4
 total_score: 0/70
 57233e7
+Thu 11 May 2023 04:36:38 PM UTC: 
+ heap.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_top’:
+heap.c:22:43: error: ‘capac’ undeclared (first use in this function)
+   22 |   dato->heapArray=malloc(sizeof(heapElem)*capac);
+      |                                           ^~~~~
+heap.c:22:43: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+972b21a

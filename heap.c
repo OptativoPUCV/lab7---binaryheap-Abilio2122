@@ -18,7 +18,13 @@ typedef struct Heap{
 
 
 void* heap_top(Heap* pq){
-    return NULL;
+  Heap *dato=malloc(sizeof(Heap));
+  dato->heapArray=malloc(sizeof(heapElem)*capac);
+  dato->size=0;
+  dato->capac=3;
+  
+  
+  return NULL;
 }
 
 
