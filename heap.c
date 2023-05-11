@@ -34,11 +34,10 @@ void heap_push(Heap* pq, void* data, int priority){
     pq->capac=(pq->capac*2)+1;
     pq->heapArray = realloc(pq->heapArray, sizeof(heapElem)*(pq->capac));
   }
-  else{
     //inserte el dato al ultimo espacio disponible
     pq->heapArray[pq->size].data=data;
     pq->heapArray[pq->size].priority=priority;
-  }
+  
   heapElem aux;
   int s=pq->size;
   int padre=(s-1)/2;
@@ -48,7 +47,7 @@ void heap_push(Heap* pq, void* data, int priority){
       pq->heapArray[s]=pq->heapArray[padre];
       pq->heapArray[padre]=aux;
       s=padre;
-    padre=(s-1)/2;
+      padre=(s-1)/2;
     }
     else break;
     
