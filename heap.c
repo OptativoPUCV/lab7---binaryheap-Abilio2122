@@ -66,7 +66,7 @@ void heap_pop(Heap* pq){
   void raiz=heap_top(pq);
 
   //intercambio valores de la raiz y de el ultimo dato
-  aux=pq->heapArray[size].data;
+  void aux=pq->heapArray[size].data;
   pq->heapArray[size].data=raiz;
   raiz=aux;
   size--;

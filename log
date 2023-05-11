@@ -143,3 +143,30 @@ heap.c:74:52: error: ‘padre’ undeclared (first use in this function)
 cc1: all warnings being treated as errors
 Compilation failed
 a4be9d8
+Thu 11 May 2023 05:33:39 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:66:8: error: variable or field ‘raiz’ declared void
+   66 |   void raiz=heap_top(pq);
+      |        ^~~~
+heap.c:66:13: error: initialization of ‘int’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+   66 |   void raiz=heap_top(pq);
+      |             ^~~~~~~~
+heap.c:69:8: error: variable or field ‘aux’ declared void
+   69 |   void aux=pq->heapArray[size].data;
+      |        ^~~
+heap.c:69:26: error: ‘size’ undeclared (first use in this function)
+   69 |   void aux=pq->heapArray[size].data;
+      |                          ^~~~
+heap.c:69:26: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:74:24: error: ‘s’ undeclared (first use in this function)
+   74 |   while((pq->heapArray[s].priority)>(pq->heapArray[padre].priority)){
+      |                        ^
+heap.c:74:52: error: ‘padre’ undeclared (first use in this function)
+   74 |   while((pq->heapArray[s].priority)>(pq->heapArray[padre].priority)){
+      |                                                    ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+38f3e18
