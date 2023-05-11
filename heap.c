@@ -63,7 +63,26 @@ pq->size++;
 
 
 void heap_pop(Heap* pq){
+  void raiz=heap_top(pq);
 
+  //intercambio valores de la raiz y de el ultimo dato
+  aux=pq->heapArray[size].data;
+  pq->heapArray[size].data=raiz;
+  raiz=aux;
+  size--;
+  //a continuacion reordenare los datos para mantener el monticulo
+  while((pq->heapArray[s].priority)>(pq->heapArray[padre].priority)){
+    if((pq->heapArray[s].priority)>(pq->heapArray[padre].priority)){ 
+      aux=pq->heapArray[s];
+      pq->heapArray[s]=pq->heapArray[padre];
+      pq->heapArray[padre]=aux;
+      s=padre;
+      padre=(s-1)/2;
+    }
+    else break;
+  }
+  //actualizo el size
+  pq->size++;
 }
 
 Heap* createHeap(){
