@@ -86,7 +86,6 @@ void heap_pop(Heap* pq){
     else{
       pq->heapArray[right]=pq->heapArray[posPadre];
       pq->heapArray[posPadre]=aux;
-      }
     }
   }
 }
