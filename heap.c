@@ -68,7 +68,7 @@ void heap_pop(Heap* pq){
     return; // el heap está vacío
   }
   //intercambio valores de la raiz y de el ultimo dato
-  pq->heapArray[0]=pq->heapArray[pq->size ];
+  pq->heapArray[0]=pq->heapArray[pq->size];
   pq->size--;
   //a continuacion reordenare los datos para mantener el monticulo
   heapElem aux;
@@ -78,7 +78,7 @@ void heap_pop(Heap* pq){
     int right=2i+2;
     int posPadre=(i-1)/2;
     //en caso de que el hijo izquierdo sea mayor que el izquierdo este se intercambiara con el padre y lo mismo en caso contrario
-    if(pq->heapArray[left].priority<pq->heapArray[right].priority){
+    if(pq->heapArray[left].priority>pq->heapArray[right].priority){
       aux=pq->heapArray[left];
       pq->heapArray[left]=pq->heapArray[posPadre];
       pq->heapArray[posPadre]=aux;
