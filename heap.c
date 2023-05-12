@@ -84,8 +84,6 @@ void heap_pop(Heap* pq){
       pq->heapArray[posPadre]=aux;
     }
     else{
-      if(pq->heapArray[right].priority<pq->heapArray[left].priority){
-      aux=pq->heapArray[right];
       pq->heapArray[right]=pq->heapArray[posPadre];
       pq->heapArray[posPadre]=aux;
       }
