@@ -68,7 +68,7 @@ void heap_pop(Heap* pq){
         return; // el heap está vacío
   }
   //intercambio valores de la raiz y de el ultimo dato
-  pq->heapArray[0]=pq->heapArray[pq->size];
+  pq->heapArray[0]=pq->heapArray[pq->size-1];
   pq->size--;
   //a continuacion reordenare los datos para mantener el monticulo
   heapElem aux;
