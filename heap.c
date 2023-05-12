@@ -66,14 +66,14 @@ void heap_pop(Heap* pq){
   //compruebo de que el heap no este vacio
   if (pq->size == 0) {
         return; // el heap está vacío
-  }
+  ;
+  //intercambio valores de la raiz y de el ultimo dato
+  pq->heapArray[0]=pq->heapArray[pq->size ];
+  pq->size--;
   if(pq->size==1){
     pq->capac=0;
     return;
   }
-  //intercambio valores de la raiz y de el ultimo dato
-  pq->heapArray[0]=pq->heapArray[pq->size ];
-  pq->size--;
   //a continuacion reordenare los datos para mantener el monticulo
   heapElem aux;
   for(int i=0;i<pq->capac;i++){
